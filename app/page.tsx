@@ -8,7 +8,7 @@ export default function Home() {
 
       <div className=" snap-start  h-screen snap-always self-start pt-24">
         <h1 className={`font-bold text-[3rem]/tight xl:text-title/[10rem] ${neueMontreal} `}>HELLO,<br/>
-        I'M <b className=" bg-clip-text   snap-always text-transparent bg-gradient-to-r from-[#C1DC1E] from-20% via-[#1EBEAB]   to-[#9AC9E0]">JORDAN</b></h1>
+        I&apos;M <b className=" bg-clip-text   snap-always text-transparent bg-gradient-to-r from-[#C1DC1E] from-20% via-[#1EBEAB]   to-[#9AC9E0]">JORDAN</b></h1>
       <h2 className="leading-tight xl:text-subtitle/tight">A FRONTEND WEB & MOBILE DEVELOPER</h2>
       </div>
 
