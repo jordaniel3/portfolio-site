@@ -20,9 +20,9 @@ export default function RootLayout({
       <body className={`${inter.className} bg-[#030708] text-[#eee]` }>
       <nav className="flex flex-row-reverse">
           <ul  >
-            <li className={`xl:inline-block xl:mx-10 xl:text-nav ${neueMontreal} font-normal`}><a href="#">Home</a></li>
-            <li className={`xl:inline-block xl:mx-10 xl:text-nav ${neueMontreal} font-normal`}><a href="#">About</a></li>
-            <li className={`xl:inline-block xl:mx-10 xl:text-nav ${neueMontreal} font-normal`}><a href="#">Contact</a></li>
+            <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><a href="#">Home</a></li>
+            <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><a href="#">About</a></li>
+            <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><a href="#">Contact</a></li>
           </ul>
         </nav>
         {children}
