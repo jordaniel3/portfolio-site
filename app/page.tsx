@@ -7,12 +7,14 @@ import React, { LegacyRef, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { SubmitButton } from "./ui/submitButton";
 import { motion } from "framer-motion";
+import { Console } from "console";
 
 export default function Home() {
   const form = useRef<HTMLFormElement>(null);
   const [submitted, setSubmitted] = useState(true);
 
   const sendEmail = (e: { preventDefault: () => void }) => {
+    console.log('sent')
     e.preventDefault();
 
     emailjs
@@ -22,27 +24,20 @@ export default function Home() {
       .then(
         () => {
           console.log("SUCCESS!", form.current);
+          setSubmitted(!submitted)
+          
         },
         (error) => {
           console.log("FAILED...", error.text);
+          alert('Something went wrong')
         }
       );
   };
   return (
     <main className={` p-10 md:p-1 `}>
-      <div className="w-full fixed inset-0 h-full">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={50}
-          className="w-full h-full"
-          particleColor="#FFFFFF"
-        />
-      </div>
+      
       <TracingBeam className="px-1 ">
-        <div className=" md:snap-start ml-6 md:h-screen md:snap-always self-start pt-24">
+        <div className=" md:snap-start md:ml-6 md:h-screen md:snap-always self-start pt-24">
           <h1
             className={`font-bold text-[3rem]/tight md:text-title/[10rem] ${neueMontreal} `}
           >
@@ -64,8 +59,8 @@ export default function Home() {
         </div>
 
         <div className=" flex flex-col pt-[25vh] items-center md:h-screen snap-start snap-always  ">
-          <div className=" flex flex-col items-center w-[60vw]">
-            <p className="md:text-[4rem]">
+          <div className=" flex flex-col items-center md:w-[60vw]">
+            <p id="About" className="md:text-[4rem]">
               <b>BSc Computing 2.1</b>
             </p>
             <p className={`${didactGothic.className} md:text-[2rem]`}>
@@ -85,16 +80,16 @@ export default function Home() {
         </div>
 
         <div className="flex z-10 flex-col items-center md:h-screen snap-start snap-always pt-20">
-          <h2 className={`md:text-subtitle font-bold `}>Skills</h2>
+          <h2 id="Skills" className={`md:text-subtitle font-bold `}>Skills</h2>
           <Image alt="skills" src="/skills.svg" width={800} height={500} />
         </div>
 
         <div className="flex flex-col pt-20 items-center md:h-screen snap-start snap-always">
-          <h2 className={`md:text-subtitle font-bold `}>Projects</h2>
+          <h2 id="Projects" className={`md:text-subtitle font-bold `}>Projects</h2>
         </div>
 
         <div className="flex flex-col pt-20 items-center snap-start snap-always ">
-          <h2 className={`md:text-subtitle font-bold `}>Get in Touch!</h2>
+          <h2 id='Contact'  className={`md:text-subtitle font-bold `}>Get in Touch!</h2>
           {submitted ? (
             <form
               className="flex flex-col w-full md:w-1/2  items-center"
@@ -132,15 +127,13 @@ export default function Home() {
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 type="submit"
-                onClick={() => {
-                  setSubmitted(!submitted);
-                }}
+                
               />
             </form>
           ) : (
-            <div className=" flex flex-col items-center">
+            <div className=" flex flex-col items-center mt-5">
               <motion.svg
-                className="w-[200px] h-[200px] md:w-[266px] md:h-[266px]"
+                className="w-[165px] h-[165px] md:w-[266px] md:h-[266px] mb-3"
               >
                 <motion.circle
                   stroke="#eee"
