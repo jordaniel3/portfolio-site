@@ -5,13 +5,81 @@ import { TracingBeam } from "./ui/tracingBeam";
 import { SparklesCore } from "./ui/sparkles";
 import React, { LegacyRef, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { SubmitButton } from "./ui/submitButton";
+import { StickyScroll } from "./ui/sticky-scroll-reveal";
 import { motion } from "framer-motion";
 import { Console } from "console";
 
 export default function Home() {
   const form = useRef<HTMLFormElement>(null);
-  const [submitted, setSubmitted] = useState(true);
+  const [submitted, setSubmitted] = useState(true)
+  const content = [
+    {
+      title: "Athletics Ranking App (C# and Kotlin versions)",
+      description:
+      <ul>
+      <li>• Developed using .NET MAUI for C# version and Jetpack Compose for Kotlin Version</li>
+      <li>• UI built using XAML with data bindings(C# Version)</li>
+      <li>• Navigated DOM tree to parse HTML elements and present them within the app.</li>
+      <li>• Leveraged Firebase authentication to handle user log in flow.</li>
+      <li>• Used Firebase Cloud Storage to save user resources.</li>
+      <li>• Created following the MVVM software architecture.</li>
+      <li>• Handled athlete data and presented them as graphs using additional libraries.</li>
+      </ul>,
+      content: (<a href="https://github.coventry.ac.uk/akinpelud/DissertationAPP/tree/main">
+        <Image
+            src="/po10app.png"
+            width={300}
+            height={300}
+            className="h-full w-full absolute object-contain"
+            alt="linear board demo"
+          /></a>
+      ),
+    },
+    {
+      title: "Home Business Locator App (React Native)",
+      description:
+      <ul>
+      <li>• Developed using Javascript and Typescript</li>
+      <li>• UI prototype created using Figma</li>
+      <li>• Firebase utilised to handle NoSQL database, cloud storage and authentication</li>
+      <li>• Redux used to handle application state and UI changes</li>
+      <li>• Github used for version control</li>
+      <li>• Built using Expo Framework</li>
+      </ul>,
+      content: (
+        <div className="h-full w-full  flex items-center justify-center text-white">
+          <Image
+            src="/bfapp.png"
+            width={300}
+            height={300}
+            className="h-full w-full object-contain"
+            alt="linear board demo"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "RESTful API",
+      description:
+      <ul>
+      <li>• Full OAS documentaion</li>
+      <li>• Data stored in a SQL database</li>
+      <li>• Built using Koa for nodejs</li>
+      <li>• Implemented E-tags, conditional headers, caching</li>
+      <li>• JWT Token authentication with security logging</li>
+      <li>• Tests written using Supertest</li>
+      <li>• Third Party Api Integration</li>
+      </ul>,
+      content: (
+        <a href="https://github.com/jordaniel3/WEB-API/blob/main/README.md">
+        <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
+          Web API Github link + demo
+        </div>
+        </a>
+        
+      ),
+    }
+  ];
 
   const sendEmail = (e: { preventDefault: () => void }) => {
     console.log('sent')
@@ -58,38 +126,34 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className=" flex flex-col pt-[25vh] items-center md:h-screen snap-start snap-always  ">
-          <div className=" flex flex-col items-center md:w-[60vw]">
-            <p id="About" className="md:text-[4rem]">
-              <b>BSc Computing 2.1</b>
-            </p>
-            <p className={`${didactGothic.className} md:text-[2rem]`}>
-              Coventry University 2020-2024
-            </p>
+        <div className="flex flex-col pt-[25vh] items-center md:h-screen snap-start snap-always">
+        <h2 id="About" className={`text-2xl md:text-subtitle font-bold mb-10`}>About Me</h2>
+        <div className=" md:grid md:grid-cols-2  gap-6 ">
+          <Image alt="Jordan in Chamonix" src="/mountains.jpeg" width={800} height={500} />
+          <div className=" flex flex-col items-center  justify-center">
+            
             <p
-              className={`${didactGothic.className} align-middle text-center md:text-2xl`}
+              className={`${didactGothic.className}    md:text-2xl `}
             >
-              Enthusiastic software engineer with a deep interest for crafting
-              code in C#, Kotlin, and JavaScript. Equipped with a strong
-              foundation in computer science, a passion for problem-solving and
-              a desire to keep learning. Ready to bring creativity, energy, and
-              boundless positivity to any team I work with while delivering
-              solutions to the best of my ability.
+              Hello, I’m Jordan! A frontend developer from London, specialising in JavaScript and C# (but I do have experience with other languages too!). I’m extremely passionate about what I do and have tons of fun doing it. As an avid learner, using the resources around me to quickly grasp new concepts is second nature to me and motivates to keep improving.
             </p>
+            
           </div>
+          
         </div>
-
+        </div>
         <div className="flex z-10 flex-col items-center md:h-screen snap-start snap-always pt-20">
-          <h2 id="Skills" className={`md:text-subtitle font-bold `}>Skills</h2>
-          <Image alt="skills" src="/skills.svg" width={800} height={500} />
+          <h2 id="Skills" className={`text-2xl md:text-subtitle font-bold mb-10`}>Skills</h2>
+          <Image alt="Jordan's skills" src="/skills.svg" width={800} height={500} />
         </div>
 
         <div className="flex flex-col pt-20 items-center md:h-screen snap-start snap-always">
-          <h2 id="Projects" className={`md:text-subtitle font-bold `}>Projects</h2>
+          <h2 id="Projects" className={`text-2xl md:text-subtitle font-bold mb-10`}>Projects</h2>
+          <StickyScroll content={content}/>
         </div>
 
         <div className="flex flex-col pt-20 items-center snap-start snap-always ">
-          <h2 id='Contact'  className={`md:text-subtitle font-bold `}>Get in Touch!</h2>
+          <h2 id='Contact'  className={`text-2xl md:text-subtitle font-bold mb-10`}>Get in Touch!</h2>
           {submitted ? (
             <form
               className="flex flex-col w-full md:w-1/2  items-center"
