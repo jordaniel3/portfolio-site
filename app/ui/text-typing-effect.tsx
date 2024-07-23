@@ -63,14 +63,15 @@ export default function TypingText() {
     <span className="inline ">
     <HeaderType className={`font-bold  text-[3rem]/tight md:text-title/[10rem] ${neueMontreal} `} words="HELLO,"/>{isDone? <br/> : null}
     <HeaderType className={`font-bold text-[3rem]/tight md:text-title/[10rem] ${neueMontreal} `} words="I'M " delay={1}/>
-    <b className=" inline-block bg-clip-text  text-transparent bg-gradient-to-r from-[#C1DC1E] from-20% via-[#1EBEAB]   to-[#9AC9E0]">
+    <motion.b className=" inline-block bg-clip-text  text-transparent bg-gradient-to-r from-[#C1DC1E] from-20% via-[#1EBEAB]   to-[#9AC9E0]"
+    whileHover={{scale:1.1}}>
       <a
         target="_blank"
         href="https://www.linkedin.com/in/jordan-akinpelu-270686149/"
       >
         <HeaderType className={`font-bold text-[3rem]/tight md:text-title/[10rem] ${neueMontreal} `} words="JORDAN" delay={1.5}/>
       </a>
-    </b>{isDone2? <span><br/> <RedoAnimText/></span>: null}
+    </motion.b>{isDone2? <span><br/> <RedoAnimText/></span>: null}
     
     <CursorBlinker />
 

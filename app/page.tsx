@@ -18,6 +18,7 @@ export default function Home() {
     {
       title: "Athletics Ranking App (C# and Kotlin versions)",
       description:
+      <a target="_blank" href="https://github.coventry.ac.uk/akinpelud/DissertationAPP/tree/main">
       <ul>
       <li>• Developed using .NET MAUI for C# version and Jetpack Compose for Kotlin Version</li>
       <li>• UI built using XAML with data bindings(C# Version)</li>
@@ -26,8 +27,10 @@ export default function Home() {
       <li>• Used Firebase Cloud Storage to save user resources.</li>
       <li>• Created following the MVVM software architecture.</li>
       <li>• Handled athlete data and presented them as graphs using additional libraries.</li>
-      </ul>,
-      content: (<a href="https://github.coventry.ac.uk/akinpelud/DissertationAPP/tree/main">
+      </ul>
+      </a>
+      ,
+      content: (<a target="_blank" href="https://github.coventry.ac.uk/akinpelud/DissertationAPP/tree/main">
         <Image
             src="/po10app.png"
             width={300}
@@ -63,6 +66,7 @@ export default function Home() {
     {
       title: "RESTful API",
       description:
+      <a target="_blank" href="https://github.com/jordaniel3/WEB-API/blob/main/README.md">
       <ul>
       <li>• Full OAS documentaion</li>
       <li>• Data stored in a SQL database</li>
@@ -71,9 +75,10 @@ export default function Home() {
       <li>• JWT Token authentication with security logging</li>
       <li>• Tests written using Supertest</li>
       <li>• Third Party Api Integration</li>
-      </ul>,
+      </ul>
+      </a>,
       content: (
-        <a href="https://github.com/jordaniel3/WEB-API/blob/main/README.md">
+        <a target="_blank" href="https://github.com/jordaniel3/WEB-API/blob/main/README.md">
         <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
           Web API Github link + demo
         </div>
@@ -108,28 +113,21 @@ export default function Home() {
       <Image alt="logo" src="/logo.svg" className="absolute right-[-5vw] 2xl:right-[5vw]  opacity-70" width={1000} height={1000} />
       
       <TracingBeam className="px-1 ">
-        <motion.div className=" md:snap-start md:ml-6 md:h-screen md:snap-always self-start pt-24">
+        <motion.div className=" md:snap-start md:ml-6 md:h-screen md:snap-always self-start pt-24 ">
           <TypingText/><br/>
-          {/* <motion.h1
-            className={`font-bold text-[3rem]/tight md:text-title/[10rem] ${neueMontreal} `}
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-          >
-            HELLO,
-            <br />
-            I&apos;M{" "}
-            <b className=" bg-clip-text text-transparent bg-gradient-to-r from-[#C1DC1E] from-20% via-[#1EBEAB]   to-[#9AC9E0]">
-              <a
-                target="_blank"
-                href="https://www.linkedin.com/in/jordan-akinpelu-270686149/"
-              >
-                JORDAN
-              </a>
-            </b>
-          </motion.h1>
-          <h2 className="leading-tight md:text-subtitle/tight">
-            A FRONTEND WEB & MOBILE DEVELOPER
-          </h2> */}
+          <motion.div
+          initial={{opacity:0}}
+          animate={{opacity:1}}
+          transition={{
+            delay:3.5
+          }} >
+          <a target="_blank" href="https://github.com/jordaniel3">
+          <Image alt="github logo" src="/github.png" width={50} height={50} className="inline mr-2"/>
+          </a>
+          <a target="_blank" href="https://github.com/jordaniel3/WEB-API/blob/main/README.md">
+          <Image alt="linkedin logo" src="/linkedin.png" width={60} height={60} className="inline" />  </a>
+          </motion.div>
+          
         </motion.div>
 
         <div className="flex flex-col pt-[25vh] items-center md:h-screen snap-start snap-always">

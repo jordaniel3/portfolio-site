@@ -6,7 +6,7 @@ export default function RedoAnimText() {
     const texts = [
       "WEB DEVELOPER",
       "MOBILE DEVELOPER",
-      "FRONTEND SOFTWARE ENGINEER",
+      "SOFTWARE ENGINEER",
     ];
   
     const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
