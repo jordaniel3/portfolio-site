@@ -38,7 +38,6 @@ export default function RedoAnimText() {
           }
         }
       });
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   
     return <motion.span className="inline leading-tight md:text-subtitle/tight">{displayText}</motion.span>;
