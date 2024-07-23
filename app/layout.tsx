@@ -17,9 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
+    <html lang="en" className="max-w-[1600px]">
       
-      <body className={`${inter.className} bg-[#030708] text-[#eee]` }>
+      <body className={`${inter.className} bg-[#030708] text-[#eee]  ` }>
       <div className="w-full select-none fixed top-8 z-0 h-full ">
         <SparklesCore
           id="tsparticlesfullpage"

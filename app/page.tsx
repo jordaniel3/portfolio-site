@@ -8,6 +8,8 @@ import emailjs from "@emailjs/browser";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 import { motion } from "framer-motion";
 import { Console } from "console";
+import TypingText from "./ui/text-typing-effect";
+import RedoAnimText from "./ui/RetypeText";
 
 export default function Home() {
   const form = useRef<HTMLFormElement>(null);
@@ -102,12 +104,16 @@ export default function Home() {
       );
   };
   return (
-    <main className={` p-10 md:p-1 `}>
+    <main className={` p-10 md:p-1 overflow-hidden absolute m-auto left-0 right-0 `}>
+      <Image alt="logo" src="/logo.svg" className="absolute right-[-5vw] 2xl:right-[5vw]  opacity-70" width={1000} height={1000} />
       
       <TracingBeam className="px-1 ">
-        <div className=" md:snap-start md:ml-6 md:h-screen md:snap-always self-start pt-24">
-          <h1
+        <motion.div className=" md:snap-start md:ml-6 md:h-screen md:snap-always self-start pt-24">
+          <TypingText/><br/>
+          {/* <motion.h1
             className={`font-bold text-[3rem]/tight md:text-title/[10rem] ${neueMontreal} `}
+            initial={{opacity:0}}
+            animate={{opacity:1}}
           >
             HELLO,
             <br />
@@ -120,20 +126,20 @@ export default function Home() {
                 JORDAN
               </a>
             </b>
-          </h1>
+          </motion.h1>
           <h2 className="leading-tight md:text-subtitle/tight">
             A FRONTEND WEB & MOBILE DEVELOPER
-          </h2>
-        </div>
+          </h2> */}
+        </motion.div>
 
         <div className="flex flex-col pt-[25vh] items-center md:h-screen snap-start snap-always">
-        <h2 id="About" className={`text-2xl md:text-subtitle font-bold mb-10`}>About Me</h2>
+        <h2 id="About" className={`text-2xl md:text-subtitle font-bold mb-10`}>//About Me</h2>
         <div className=" md:grid md:grid-cols-2  gap-6 ">
           <Image alt="Jordan in Chamonix" src="/mountains.jpeg" width={800} height={500} />
           <div className=" flex flex-col items-center  justify-center">
             
             <p
-              className={`${didactGothic.className}    md:text-2xl `}
+              className={`${neueMontreal.className}    md:text-2xl `}
             >
               Hello, I’m Jordan! A frontend developer from London, specialising in JavaScript and C# (but I do have experience with other languages too!). I’m extremely passionate about what I do and have tons of fun doing it. As an avid learner, using the resources around me to quickly grasp new concepts is second nature to me and motivates to keep improving.
             </p>
@@ -143,17 +149,17 @@ export default function Home() {
         </div>
         </div>
         <div className="flex z-10 flex-col items-center md:h-screen snap-start snap-always pt-20">
-          <h2 id="Skills" className={`text-2xl md:text-subtitle font-bold mb-10`}>Skills</h2>
+          <h2 id="Skills" className={`text-2xl md:text-subtitle font-bold mb-10 `}>//Skills</h2>
           <Image alt="Jordan's skills" src="/skills.svg" width={800} height={500} />
         </div>
 
         <div className="flex flex-col pt-20 items-center md:h-screen snap-start snap-always">
-          <h2 id="Projects" className={`text-2xl md:text-subtitle font-bold mb-10`}>Projects</h2>
+          <h2 id="Projects" className={`text-2xl md:text-subtitle font-bold mb-10`}>//Projects</h2>
           <StickyScroll content={content}/>
         </div>
 
         <div className="flex flex-col pt-20 items-center snap-start snap-always ">
-          <h2 id='Contact'  className={`text-2xl md:text-subtitle font-bold mb-10`}>Get in Touch!</h2>
+          <h2 id='Contact'  className={`text-2xl md:text-subtitle font-bold mb-10`}>//Get in Touch!</h2>
           {submitted ? (
             <form
               className="flex flex-col w-full md:w-1/2  items-center"
