@@ -110,26 +110,7 @@ export default function Home() {
       <TracingBeam className="px-1 ">
         <motion.div className=" md:snap-start md:ml-6 md:h-screen md:snap-always self-start pt-24">
           <TypingText/><br/>
-          {/* <motion.h1
-            className={`font-bold text-[3rem]/tight md:text-title/[10rem] ${neueMontreal} `}
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-          >
-            HELLO,
-            <br />
-            I&apos;M{" "}
-            <b className=" bg-clip-text text-transparent bg-gradient-to-r from-[#C1DC1E] from-20% via-[#1EBEAB]   to-[#9AC9E0]">
-              <a
-                target="_blank"
-                href="https://www.linkedin.com/in/jordan-akinpelu-270686149/"
-              >
-                JORDAN
-              </a>
-            </b>
-          </motion.h1>
-          <h2 className="leading-tight md:text-subtitle/tight">
-            A FRONTEND WEB & MOBILE DEVELOPER
-          </h2> */}
+          
         </motion.div>
 
         <div className="flex flex-col pt-[25vh] items-center md:h-screen snap-start snap-always">
