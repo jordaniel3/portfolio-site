@@ -139,7 +139,7 @@ export default function Home() {
             <p
               className={`${neueMontreal.className}    md:text-2xl `}
             >
-              Hello,  I’m Jordan! A frontend developer from London, specialising in JavaScript and C# (but I do have experience with other languages too!). I’m extremely passionate about what I do and have tons of fun doing it. As an avid learner, using the resources around me to quickly grasp new concepts is second nature to me and motivates to keep improving.
+              Hello,  I’m Jordan! A software developer from London, specialising in JavaScript and C# (but I do have experience with other languages too!). I’m extremely passionate about what I do and have tons of fun doing it. As an avid learner, using the resources around me to quickly grasp new concepts is second nature to me and motivates to keep improving.
             </p>
             
           </div>
