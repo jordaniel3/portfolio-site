@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { MouseEventHandler, useState } from "react";
 
-export function HoverPickerItem({
+ function HoverPickerItem({
   imageSrc,
   className,
   objectPosition,
