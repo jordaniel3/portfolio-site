@@ -5,6 +5,7 @@ export default function RedoAnimText() {
     const textIndex = useMotionValue(0);
     const texts = [
       "WEB DEVELOPER",
+      "TECHNICAL ANALYST",
       "MOBILE DEVELOPER",
       "SOFTWARE ENGINEER",
     ];

@@ -10,6 +10,8 @@ import { motion } from "framer-motion";
 import { Console } from "console";
 import TypingText from "./ui/text-typing-effect";
 import RedoAnimText from "./ui/RetypeText";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   const form = useRef<HTMLFormElement>(null);
@@ -109,10 +111,12 @@ export default function Home() {
       );
   };
   return (
-    <main className={` p-10 md:p-1 overflow-hidden absolute m-auto left-0 right-0 `}>
+    <main className={` p-10 md:p-1 overflow-hidden h-auto absolute m-auto left-0 right-0 `}>
+      <Analytics/>
+      <SpeedInsights/>
       <Image alt="logo" src="/logo.svg" className="absolute right-[-5vw] 2xl:right-[5vw]  opacity-70" width={1000} height={1000} />
       
-      <TracingBeam className="px-1 ">
+      <TracingBeam className="px-1 pt-2">
         <motion.div className=" md:snap-start md:ml-6 md:h-screen md:snap-always self-start pt-24 ">
           <TypingText/><br/>
           <motion.div
@@ -139,7 +143,7 @@ export default function Home() {
             <p
               className={`${neueMontreal.className}    md:text-2xl `}
             >
-              Hello,  I’m Jordan! A software developer from London, specialising in JavaScript and C# (but I do have experience with other languages too!). I’m extremely passionate about what I do and have tons of fun doing it. As an avid learner, using the resources around me to quickly grasp new concepts is second nature to me and motivates to keep improving.
+              Hello,  I’m Jordan! A software developer and technical analyst from London, specialising in JavaScript and C# (but I do have experience with other languages too!). I’m extremely passionate about what I do and have tons of fun doing it. As an avid learner, using the resources around me to quickly grasp new concepts is second nature to me and motivates to keep improving.
             </p>
             
           </div>
