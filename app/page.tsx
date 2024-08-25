@@ -12,6 +12,7 @@ import TypingText from "./ui/text-typing-effect";
 import RedoAnimText from "./ui/RetypeText";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Link from "next/link";
 
 export default function Home() {
   const form = useRef<HTMLFormElement>(null);
@@ -112,6 +113,21 @@ export default function Home() {
   };
   return (
     <main className={` p-10 md:p-1 overflow-hidden h-auto absolute m-auto left-0 right-0 `}>
+      <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={50}
+          className="w-full h-full z-[-1000] select-none fixed pointer-events-none "
+          particleColor="#FFFFFF"
+        />
+      <nav className="flex flex-row-reverse z-10">
+          <ul  >
+            <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><Link href="/">Home</Link></li>
+            <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><Link href="/playground/hoverPickerPage">Playground</Link></li>
+          </ul>
+        </nav>
       <Analytics/>
       <SpeedInsights/>
       <Image alt="logo" src="/logo.svg" className="absolute right-[-5vw] 2xl:right-[5vw]  opacity-70" width={1000} height={1000} />
