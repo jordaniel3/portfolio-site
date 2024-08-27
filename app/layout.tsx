@@ -4,8 +4,12 @@ import "./globals.css";
 import { neueMontreal } from "./ui/fonts";
 import { SparklesCore } from "./ui/sparkles";
 import Link from "next/link";
+import { IoMdMenu } from "react-icons/io";
+import { ApolloWrapper } from "./ApolloWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
+
+
 
 export const metadata: Metadata = {
   title: "Jordan Akinpelu",
@@ -30,15 +34,17 @@ export default function RootLayout({
           className="w-full h-full z-[-1000] select-none fixed pointer-events-none "
           particleColor="#FFFFFF"
         />
-      <nav className="flex flex-row-reverse z-10">
+      <nav className="flex flex-row-reverse z-10 justify-between">
+        
           <ul  >
             <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><Link href="/">Home</Link></li>
             <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><Link href="/playground/hoverPickerPage">Playground</Link></li>
           </ul>
+          <button><IoMdMenu className="ml-5 text-[3rem]"/></button>
         </nav>
-        
+        <ApolloWrapper>
         {children}
-        
+        </ApolloWrapper>
         </body>
     </html>
   );
