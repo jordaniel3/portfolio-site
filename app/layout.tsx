@@ -21,6 +21,21 @@ export default function RootLayout({
     <html lang="en" className="">
       
       <body className={`${inter.className} bg-[#030708] text-[#eee]  ` }>
+      <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={50}
+          className="w-full h-full z-[-1000] select-none fixed pointer-events-none "
+          particleColor="#FFFFFF"
+        />
+      <nav className="flex flex-row-reverse z-10">
+          <ul  >
+            <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><Link href="/">Home</Link></li>
+            <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><Link href="/playground/hoverPickerPage">Playground</Link></li>
+          </ul>
+        </nav>
         
         {children}
         
