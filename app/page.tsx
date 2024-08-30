@@ -13,8 +13,12 @@ import RedoAnimText from "./ui/RetypeText";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "./redux/store";
+import { toggleProjectMenu } from "./redux/uiSlice";
 
 export default function Home() {
+  
   const form = useRef<HTMLFormElement>(null);
   const [submitted, setSubmitted] = useState(true)
   const content = [
@@ -112,7 +116,7 @@ export default function Home() {
       );
   };
   return (
-    <main className={` p-10 md:p-1 overflow-hidden h-auto absolute m-auto left-0 right-0 `}>
+    <main className={` p-10 md:p-1 overflow-hidden h-auto absolute md:m-auto left-0 right-0 `}>
      
       
       <Analytics/>
@@ -131,7 +135,7 @@ export default function Home() {
           <a target="_blank" href="https://github.com/jordaniel3">
           <Image alt="github logo" src="/github.png" width={50} height={50} className="inline mr-2"/>
           </a>
-          <a target="_blank" href="https://github.com/jordaniel3/WEB-API/blob/main/README.md">
+          <a target="_blank" href="https://www.linkedin.com/in/jordan-akinpelu-270686149/">
           <Image alt="linkedin logo" src="/linkedin.png" width={60} height={60} className="inline" />  </a>
           </motion.div>
           
@@ -254,7 +258,7 @@ export default function Home() {
           )}
         </div>
         <footer className="flex flex-col pt-20 items-center  snap-start snap-always mt-48">
-          <p>This website was created using Next.Js, ReactJS and Tailwind</p>
+          <p>This website was created using Next.Js, ReactJS, Redux and Tailwind</p>
         </footer>
       </TracingBeam>
     </main>

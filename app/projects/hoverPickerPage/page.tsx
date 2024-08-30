@@ -50,7 +50,6 @@ export default function HoverPickerPage() {
   return (
     <main className="  ">
         
-      <h1>Hover Picker</h1>
       <div className="h-screen">
         <HoverPicker>
           <HoverPickerItem
