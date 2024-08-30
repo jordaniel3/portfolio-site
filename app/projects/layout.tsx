@@ -20,7 +20,7 @@ export default function Layout({children,}: Readonly<{children: React.ReactNode;
         <div className="w-full" >
           {children}
           </div>
-          <Tooltip anchorSelect=".Random-Anime-element" place="right">A Random Anime Picker that uses the Anilist's GraphQL API </Tooltip>
+          <Tooltip anchorSelect=".Random-Anime-element" place="right">A Random Anime Picker that uses the Anilist&apos;s GraphQL API </Tooltip>
           <Tooltip anchorSelect=".Hover-Picker" place="right">A Hover selector component animated with framer motion </Tooltip>
       </div>
     )
