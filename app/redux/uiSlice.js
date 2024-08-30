@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const uiSlice = createSlice({
     name:'UI',
-    initialState:false,
+    initialState:true,
     reducers:{
         toggleProjectMenu:(state) =>
             state = !state
