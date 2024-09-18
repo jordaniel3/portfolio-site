@@ -16,6 +16,7 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "./redux/store";
 import { toggleProjectMenu } from "./redux/uiSlice";
+import { getAthletes, getHTML, saveAthletesToDB } from "./projects/PowerOf10/scrape";
 
 export default function Home() {
   

@@ -46,7 +46,7 @@ export default function RootLayout({
         
           <ul  >
             <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><Link href="/">Home</Link></li>
-            <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><Link href="/projects/hoverPickerPage">Projects</Link></li>
+            <li className={`inline-block mx-10 md:text-nav ${neueMontreal} font-normal`}><Link href="/projects/">Projects</Link></li>
           </ul>
           {path.includes("/projects/")? <MenuButton />:null}
           

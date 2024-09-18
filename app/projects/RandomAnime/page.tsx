@@ -31,8 +31,9 @@ function getRandomArbitrary(min: number, max: number) {
 export default function RandomAnime(){
     let [randomNum,changeRandomNum] = useState(getRandomArbitrary(0,18000))
     const { loading, error, data } = useQuery(query,{variables:{page:randomNum,perPage:1,isAdult:false,asHtml:false,type: "ANIME"}});
+    
     if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error : {error.message}</p>;
+    if (error) return <p>Error : {error.message} (likely overfetching try again later)</p>;
     function randomize(){
       changeRandomNum(getRandomArbitrary(0,18000))
 
@@ -40,7 +41,7 @@ export default function RandomAnime(){
 
     return(
         <main className=" flex flex-col md:flex-row mx-5   ">
-            <Image alt="Cover Image" src={data.Page.media[0].coverImage.extraLarge} width={300} height={100} className="self-center md:self-start w-auto  min-w-[250px] max-w-[250px] rounded-3xl md:min-w-[500px] md:max-w-[500px]"/>
+            <Image alt="Cover Image" src={data.Page.media[0].coverImage.extraLarge} width={100} height={500} className="self-center md:self-start w-auto  min-w-[250px] max-w-[250px] rounded-3xl md:min-w-[500px] md:max-w-[500px]"/>
             
             <div className="flex flex-col ml-4 md:w-1/2 justify-between">
                 <div>
@@ -52,9 +53,10 @@ export default function RandomAnime(){
                     )}
                 </div>
                 </div>
-                <div
+                {data.Page.media[0].description ==undefined?<p>No description to show</p>:<div
+                    
                     dangerouslySetInnerHTML={{__html: data.Page.media[0].description}}
-                />
+                />}
                 <p className="text-xl md:text-subtitle">Mean Score: {data.Page.media[0].meanScore}%</p>
                 <button onClick={randomize} className="bg-slate-300 w-72 p-2 text-black justify-center rounded-3xl flex flex-row"><IoIosShuffle  className="self-center  text-subtitle"/><span className="  text-4xl self-center">Randomize</span></button>
             </div>
