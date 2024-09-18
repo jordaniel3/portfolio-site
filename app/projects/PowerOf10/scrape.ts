@@ -84,7 +84,7 @@ export async function saveAthletesToDB(){
               (athlete:Athlete) => client.sql`
                 INSERT INTO "100_women" (rank,season,first_name,last_name,gender,age_group,performance,
                 pb,event,coach,club,perf_date)
-                VALUES (${athlete.rank},${athleteList[1].season}, ${athlete.firstName}, ${athlete.lastName}, ${athleteList[1].gender}, ${athleteList[1].age}, ${athlete.sb}, ${athlete.pb},
+                VALUES (${athlete.rank},${athleteList[1].season}, ${athlete.firstname}, ${athlete.lastname}, ${athleteList[1].gender}, ${athleteList[1].age}, ${athlete.sb}, ${athlete.pb},
                  ${athleteList[1].event}, ${athlete.coach}, ${athlete.club}, ${athlete.date})
               `,
             ),
