@@ -53,17 +53,17 @@ export default function PowerOf10(){
 
             <h2 className=" text-2xl mt-10">Pick an Endpoint</h2>
             <div>
-            <button onClick={()=>changeEndpoint("Men's 100 Metres 2023 Rankings")} className="m-5 bg-lime-500 p-2">Men's 100m 2023  </button>
-            <button onClick={()=>changeEndpoint("Men's 200 Metres 2023 Rankings")} className="m-5 bg-lime-500 p-2">Men's 200m 2023 </button>
-            <button onClick={()=>changeEndpoint("Women's 100 Metres 2023 Rankings")} className="m-5 bg-lime-500 p-2">Women's 100m 2023  </button>
-            <button onClick={()=>changeEndpoint("Women's 200 Metres 2023 Rankings")} className="m-5 bg-lime-500 p-2">Women's 200m 2023 </button>
+            <button onClick={()=>changeEndpoint("Men's 100 Metres 2023 Rankings")} className="m-5 bg-lime-500 p-2">Men&apos;s 100m 2023  </button>
+            <button onClick={()=>changeEndpoint("Men's 200 Metres 2023 Rankings")} className="m-5 bg-lime-500 p-2">Men&apos;s 200m 2023 </button>
+            <button onClick={()=>changeEndpoint("Women's 100 Metres 2023 Rankings")} className="m-5 bg-lime-500 p-2">Women&apos;s 100m 2023  </button>
+            <button onClick={()=>changeEndpoint("Women's 200 Metres 2023 Rankings")} className="m-5 bg-lime-500 p-2">Women&apos;s 200m 2023 </button>
                 
 
             </div>
             <h1>{endpoint}</h1>
             {loading?<p>Loading...</p>:<div>
              {data?.map((athlete,id)=>
-                <Athlete athlete={athlete} athid={id}/>)}    
+                <Athlete athlete={athlete} key={id}/>)}    
             </div>}
             <div className="flex flex-row self-center mt-10">
                 <button className="p-2 bg-lime-500 w-50 h-50 mx-5" onClick={()=>{
@@ -83,7 +83,7 @@ export default function PowerOf10(){
         </main>
     )
 }
-function Athlete({athid, athlete}:{athid:number,athlete:any}){
+function Athlete({athlete}:{athlete:any}){
     return(
         <div className={`w-full flex flex-row  outline-2 outline-gray-100 outline -outline-offset-1 p-5 `}>
             <div className="flex flex-col w-1/4">
