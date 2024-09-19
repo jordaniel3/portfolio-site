@@ -17,27 +17,27 @@ export default function PowerOf10(){
             let response 
         switch(endpoint){
             case "Men's 200 Metres 2023 Rankings":
-                response = await fetch(`http://www.jordanakinpelu.co.uk/projects/PowerOf10/api/200Men?page=${page}`)
-                const jsonM200 = await response.json()
-                changeData(jsonM200.data.rows)
+                response = await fetch(`https://www.jordanakinpelu.co.uk/projects/PowerOf10/api/200Men?page=${page}`).catch((err)=>console.log(err))
+                const jsonM200 = await response?.json()
+                changeData(jsonM200)
                 setLoading(false)
             break;
             case "Women's 100 Metres 2023 Rankings":
-                response = await fetch(`http://www.jordanakinpelu.co.uk/projects/PowerOf10/api/100Women?page=${page}`)
-                const jsonW100 = await response.json()
-                changeData(jsonW100.data.rows)
+                response = await fetch(`https://www.jordanakinpelu.co.uk/projects/PowerOf10/api/100Women?page=${page}`).catch((err)=>console.log(err))
+                const jsonW100 = await response?.json()
+                changeData(jsonW100)
                 setLoading(false)
             break;
             case "Women's 200 Metres 2023 Rankings":
-                response = await fetch(`http://www.jordanakinpelu.co.uk/projects/PowerOf10/api/200Women?page=${page}`)
-                const jsonW200 = await response.json()
-                changeData(jsonW200.data.rows)
+                response = await fetch(`https://www.jordanakinpelu.co.uk/projects/PowerOf10/api/200Women?page=${page}`).catch((err)=>console.log(err))
+                const jsonW200 = await response?.json()
+                changeData(jsonW200)
                 setLoading(false)
             break;
             default:"Men's 100 Metres 2023 Rankings"
-                response = await fetch(`http://www.jordanakinpelu.co.uk/projects/PowerOf10/api/100Men?page=${page}`)
-                const jsonM100 = await response.json()
-                changeData(jsonM100.data.rows)
+                response = await fetch(`https://www.jordanakinpelu.co.uk/projects/PowerOf10/api/100Men?page=${page}`).catch((err)=>console.log(err))
+                const jsonM100 = await response?.json()
+                changeData(jsonM100)
                 setLoading(false)
         }}
         getData()

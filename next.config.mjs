@@ -10,6 +10,25 @@ const nextConfig = {
             },
           ],
         },
+        async headers() {
+          return [
+            {
+              // Routes this applies to
+              source: "/(.*)",
+              // Headers
+              headers: [
+                // Allow for specific domains to have access or * for all
+                {
+                  key: "Access-Control-Allow-Origin",
+                  value: "*",
+                },
+              ],
+            },
+          ];
+        },
+        
+    
+        
       
 };
 
