@@ -6,7 +6,7 @@ import { QueryResult } from "@vercel/postgres"
 
 export default function PowerOf10(){
     var [endpoint,changeEndpoint] = useState("Men's 100 Metres 2023 Rankings")
-    var [data,changeData] = useState<any[]>()
+    var [data,changeData] = useState({data:[]})
     var [page,setPage] = useState(0)
     var [loading,setLoading] = useState(false)
 
@@ -62,7 +62,7 @@ export default function PowerOf10(){
             </div>
             <h1>{endpoint}</h1>
             {loading?<p>Loading...</p>:<div>
-             {data?.map((athlete,id)=>
+             {data?.data?.map((athlete,id)=>
                 <Athlete athlete={athlete} key={id}/>)}    
             </div>}
             <div className="flex flex-row self-center mt-10">
