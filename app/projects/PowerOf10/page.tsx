@@ -43,7 +43,7 @@ export default function PowerOf10(){
         getData()
     },[endpoint,page])
     return(
-        <main className="flex flex-col mx-[200px] mb-20">
+        <main className="flex flex-col md:mx-[200px] mb-20">
             
             <p>Raw endpoints (JSON)</p>
             <a href="PowerOf10/api/100Men" className="underline">/api/100Men </a>
